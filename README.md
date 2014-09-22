@@ -1,29 +1,31 @@
-# Django Girls Tutorial
+# Django Girls 教學
 
 > This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by-sa/4.0/
 
 
-## Introduction
+## 介紹
 
-Have you ever felt that the world is more and more about technology and you are somehow left behind? Have you ever wondered how to create a website but have never had enough motivation to start? Have you ever thought that the software world is too complicated for you to even try doing something on your own?
+你曾經感覺到這個世界越來越高科技而你似乎被遺棄了嗎？你曾經好奇如何創建一個網站但卻一直沒有足夠的動機開始動手嗎？你有沒有曾經認為，在你想要做一些屬於自己的作品時，這個軟體的世界對你來說好像是太過於複雜了呢？
 
-Well, we have good news for you! Programming is not as hard as it seems and we want to show you how fun it can be.
+我們為你帶來佳音了！學寫程式沒有你想得困難，我們現在就可以秀給你看，寫程式能多有趣！
 
-The tutorial will not magically turn you into a programmer. If you want to be good at it, you need months or even years of learning and practice. But we want to show you that programming or creating websites is not as complicated as it seems. We will try to explain different bits and pieces as well as we can, so you will not feel intimidated by technology.
+這個教程不會像變魔術一樣讓你一夜之間成為一個程序員。如果你想要成為高手，你需要經年累月的學習與實戰。但我們想要展現給你看看寫程式與創建一個網站並沒有想像中困難。我們會盡其所能的解釋每一個你需要知道的基礎知識，讓你不再對科技感到卻步。
 
-We hope that we'll be able to make you love technology as much as we do!
+我們期待，我們能夠讓你愛上這些技術，如同我們一樣！
 
-## What will you learn during the tutorial?
 
-Once you've finished the tutorial, you will have a simple, working web application: your own blog. We will show you how to put it online, so others will see your work!
+## 在這本教程中你能夠學到什麼？
 
-It will (more or less) look like this:
+一旦你完成本教程，你將會有一個自己的作品，一個可運作的網站程式：你自己的部落格。我們將為你示範如何將它放上線，讓大家都可以看見你的成果！
+
+這個作品大概會看起來像這樣：
 
 ![Figure 0.1](images/application.png)
 
-OK, [let's start at the beginning...](how_internet_works/README.md)
+好了, [讓我們細說從頭吧...](how_internet_works/README.md)
+
 
 ## About and contributing
 
