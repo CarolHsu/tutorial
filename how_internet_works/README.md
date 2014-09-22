@@ -1,48 +1,48 @@
-# How the Internet works
+# 網際網路(Internet)是如何運作的
 
-> This chapter is inspired by a talk "How the Internet works" by Jessica McKellar (http://web.mit.edu/jesstess/www/).
+> 本章節是受 Jessica McKellar (http://web.mit.edu/jesstess/www/) 的一場小講題 "How the Internet works" 所啓發
 
-We bet you use the Internet every day. But do you actually know what happens when you type an address like http://djangogirls.org into your browser and press 'Enter'?
+我們敢打賭你應該每天都有使用網際網路。但是你真的知道，當你輸入一個網址時，像是 http://djangogirls.org 到你的瀏覽器並按下「Enter」的時候發生了哪些事情嗎？
 
-The first thing you need to understand is that a website is just a bunch of files saved on a hard disk. Just like your movies, music or pictures.
-However, there is one part that is unique for websites: they include computer code called HTML.
+你需要明白的第一件事就是，其實一個網站就是一堆存在硬碟的檔案啦。就像是你電腦裡的眾多影片、音樂和照片。即便如此，網站的組成中還是有一部分是獨一無二的：他們都含有一種叫做「HTML」的程式碼。
 
-If you're not familiar with programming, it can be hard to grasp HTML at first, but your web browsers (like Chrome, Safari, Firefox, etc.) love it. Web browsers are designed to understand this code,
-follow its instructions and present all these files that your website is made of exactly the way you want them to be presented.
+如果你還不熟悉編程，你一開始可能會有點難理解什麼叫做 HTML，但是你的網站瀏覽器（像是 Chrome, Safari, Firefox 等等）超愛它。網站瀏覽器就是設計出來讀懂 HTML 的，遵循它的架構及切切實實地展示你希望瀏覽器展示的所有檔案。
 
-As with every file, we need to store HTML files somewhere on a hard disk. For the Internet, we use special, powerful computers called *servers*. They don't have
-a screen, mouse or a keyboard, because their main purpose is to store data and serve it. That's why they're called *servers* -- because they *serve* you data.
+我們需要將 HTML 檔案們，及其所包含的所有檔案存在硬碟的某處。為了放上網際網路，我們使用了特別且強悍的電腦 -- 稱為 *伺服器* (server)。這些伺服器不需要螢幕、滑鼠甚至是鍵盤，因為這些電腦的主要目的就是儲存這些資料並且提供所有人使用(serve it)。這是為什麼它們被稱為 *伺服器(server)* -- 因為他們 *提供(serve)* 你的資料。
 
-OK, but you want to know how the Internet looks like, right?
+好了，但你還是想要知道網際網路到底是啥，對嗎？
 
-We drew you a picture! It looks like this:
+我們為你畫了張示意圖，它看起來像是這樣：
 
-![Figure 1.1](images/internet_1.png)
+![圖示 1.1](images/internet_1.png)
 
-Looks like a mess, right? In fact it is a network of connected machines (the above mentioned *servers*). Hundreds of thousands of machines! Many, many kilometers of cables around the world! You can visit a Submarine Cable Map website (http://submarinecablemap.com/) to see how complicated the net is. Here is a screenshot from the website:
+看起來真是一團亂啊 XD
 
-![Figure 1.2](images/internet_3.png)
+事實上它就是聯繫機器（上面提到的伺服器）間的網絡。成千上萬台的機器啊！無法想像幾公里長的電纜存在在這個世界上！你可以訪問一個叫做 Submarine 纜線地圖 (http://submarinecablemap.com/) 的網站，去看看這個連結有多複雜。這是網站中的一個截圖：
 
-It is fascinating, isn't it? But obviously, it is not possible to have a wire between every machine connected to the Internet. So, to reach a machine (for example the one where http://djangogirls.org is saved) we need to pass a request through many, many different machines.
+![圖示 1.2](images/internet_3.png)
 
-It looks like this:
+這真是無法想像，對吧？但是很明顯地，要在任意兩台機器間都有電纜連結這件事本身是不可能的。所以呢，為了可以連結到某台機器（例如說儲存了本站檔案的 http://djangogirls.org）我們需要傳遞我們的要求（Request），經由很多很多台不同的機器。
 
-![Figure 1.3](images/internet_2.png)
+這件事看起來就像是這樣：
 
-Imagine that when you type http://djangogirls.org, you send a letter that says: "Dear Django Girls, I want to see the djangogirls.org website. Send it to me, please!"
+![圖示 1.3](images/internet_2.png)
 
-Your letter goes to the post office closest to you. Then it goes to another that is a bit nearer to your addressee, then to another and another till it is delivered at its destination. The only unique thing is that if you send letters (*data packets*) frequently to the same place, each letter might go through totally different post offices (*routers*), depending on how they are distributed in each office.
+想像一下當你輸入 http://djangogirls.org，你等同於像是寄了一封信裡面寫著：「親愛的 Django Girls, 我想要看看 djangogirls.org 這個網站，請把裡面的資訊寄給我，謝謝！」
 
-![Figure 1.4](images/internet_4.png)
+你的信會先送到最近的郵局。然後再送到下一個離你的收件地址更近一點的，然後再下一個，直到這封信被傳遞到目的地為止。唯一一件比較特別的事是如果你送了頻繁的信 (*封包*) 到同一個地址，每一封信都會經由完全不同的郵局路徑 (*路由*)，這是依據他們如何被分散到各個郵局。
 
-Yes, it is as simple as that. You send messages and you expect some response. Of course, instead of paper and pen you use bytes of data, but the idea is the same!
+![圖示 1.4](images/internet_4.png)
 
-Instead of addresses with a street name, city, zip code and country name, we use IP addresses. Your computer first asks the DNS (Domain Name System) to translate djangogirls.org into an IP address. It works a little bit like old-fashioned phonebooks where you could look for the name of the person you want to contact and find their phone number and address.
+沒錯以上就是個小範例。你送出訊息並且期望會收到某個回應，當然，除了紙筆你也可以使用資料位元，這是同樣的概念！
 
-When you send a letter, it needs to have certain features to be delivered correctly: an address, stamp etc. You also use a language that the receiver understands, right? The same is with *data packets* you send in order to see a website: you use a protocol called HTTP (Hypertext Transfer Protocol).
+除了有國家、郵遞區號、城市與街道名稱所組成的地址，我們也使用 IP 作為地址。你的電腦會先要求網域系統 (DNS - Domain Name System) 將 djangogirls.org 這個網域轉換為 IP。這個運作方式就有點像是古早以前的黃頁電話簿，你可以先找某個人的名字然後用他的電話號碼和地址與他聯繫。
 
-So, basically, when you have a website you need to have a *server* (machine) where it lives. The *server* is waiting for any incoming *requests* (letters that ask the server to send your website) and it sends back your website (in another letter).
+當你要寄一封信，就需要一些功能讓它可以被正確的遞送：一個地址，郵戳等等。你也需要使用收件者可以理解的語言，對吧？這與你依順序送出的 *封包* 要求觀看一個網站其實是同一件事：你使用一個被稱為 HTTP（超文本轉換） 的協定（protocol）
 
-Since this is a Django tutorial, you will ask what Django does. When you send a response, you don't always want to send the same thing to everybody. It is so much better if your letters are personalized, especially for the person that has just written to you, right? Django helps you with creating these personalized, interesting letters :).
+所以呢，基本上，當你有了一個網站程式你也需要有一個 *伺服器(server)* (機器) 讓你的網站活起來。這個 *伺服器* 一直在等待來自各方的 *要求(request)* (這個詞意思是要求伺服器傳回你的網站資料)，然後伺服器會就回應你你要求的網站 *(response)* 。
 
-Enough talk, time to create!
+從這個 Django tutorial 教材中你可以了解 Django 實際上做了什麼，當你需要回傳一個回應，你並不想總是對不同的人回傳同一個回應，你的信是更加個人化的、更加特別針對某個人只為你量身打造的，豈不是更好嗎？Django 便會幫助你去創造這些更私人，更有趣的回信 :)
+
+說夠了，動手做吧！
+

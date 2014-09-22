@@ -22,7 +22,7 @@ http://creativecommons.org/licenses/by-sa/4.0/
 
 這個作品大概會看起來像這樣：
 
-![Figure 0.1](images/application.png)
+![圖示 0.1](images/application.png)
 
 好了, [讓我們細說從頭吧...](how_internet_works/README.md)
 
