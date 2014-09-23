@@ -315,10 +315,9 @@ Dictionary 也像 "List" 一樣，可以默默地把它裡面的東西做點改�
 人生要進階了，興奮嗎？ XDDDD
 
 
-## 比較(compare)
+## 比對(compare)
 
-
-A big part of programming includes comparing things. What's the easiest thing to compare? Numbers, of course. Let's see how that works:
+程式中有很大一部份都在比對東西。什麼是最容易被比對的東西呢？當然是數字。我們來看看這裡怎麼做的：
 
     >>> 5 > 2
     True
@@ -329,25 +328,25 @@ A big part of programming includes comparing things. What's the easiest thing to
     >>> 1 == 1
     True
 
-We gave Python some numbers to compare. As you can see, Python can compare not only numbers, but it can also compare method results. Nice, huh?
+我們給 Python 幾個數字去互相比對。如同你看見的，Python 不僅可以比對數字，甚至可以比對不同方法產生的結果，酷斃了對吧？
 
-Do you wonder why we put two equal signs `==` next to each other to compare if numbers are equal? We use a single `=` for assigning values to variables. You always, __always__ need to put two `==` if you want to check if things are equal to each other.
+你說不定也會好奇為什麼我們寫了兩個等號 `==` 就可以比對兩個數字是不是相等，我們用單一個等號 `=` 去給變數賦值。如果你想要知道兩個東西是不是相等，你通常， __通常__ 需要放兩個 `==` 在兩個東西之間。
 
-Give Python two more tasks:
+給 Python 更多工作：
 
     >>> 6 >= 12 / 2
     True
     >>> 3 <= 2
     False
 
-`>` and `<` are easy, but what do `>=` and `<=` mean? Read them like this:
+`>` 及 `<` 很直觀，不過 `>=` 和 `<=` 是什麼意思? 其實事情是這樣的：
 
-- x `>` y means: x is greater than y
-- x `<` y means: x is smaller than y
-- x `<=` y means: x is smaller or equal to y
-- x `>=` y means: x is greater or equal to y
+- x `>` y 表示: x 大於 y
+- x `<` y 表示: x 小於 y
+- x `<=` y 表示: x 小於等於 y
+- x `>=` y 表示: x 大於等於 y
 
-Awesome! Wanna do one more? Try this:
+很棒吧！想知道更多嗎？試試這些：
 
     >>> 6 > 2 and 2 < 3
     True
@@ -356,62 +355,65 @@ Awesome! Wanna do one more? Try this:
     >>> 3 > 2 or 2 < 1
     True
 
-You can give Python as many numbers to compare as you want, and it will give you an answer! Pretty smart, right?
+你儘可以給 Python 所有你想比對的數字，它都會給你答案！非常聰明對吧？
 
-- __and__ - if you use the `and` operator, both comparisons have to be True in order for the whole command to be True
-- __or__ - if you use the `or` operator, only one of the comparisons has to be True in order for the whole command to be True
+- __and__ - 如果你使用 `and` 運算子，會回傳給你一個交集（所有結果都必須為 `true` 才是 `true）
+- __or__ - 如果你使用 `or` 運算子，會回傳給你一個聯集（只要其中一個結果都必須為 `true` 就是 `true）
 
-Have you heard of the expression "comparing apples to oranges"? Let's try the Python equivalent:
+
+不知道你有沒有聽過一個諺語「牛頭不對馬嘴」（按：原文為 "comparing apples to oranges"）呢? 讓我們來試試下面的等式吧！：
 
     >>> 1 > 'django'
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     TypeError: unorderable types: int() > str()
 
-Here you see that just like in the expression, Python is not able to compare a number (`int`) and a string (`str`).
-Instead, it shows a **TypeError** and tells us the two types can't be compared together.
+在此你看到在這個表達式中，Python 無法用數字 (`int`) 來與字串 (`str`) 做比較。
+此外，它給了一個 **TypeError** 並告訴我們這兩種型態無法放在一起比較。
 
-## Boolean
 
-Accidently, you just learned about a new type of object in Python. It's called a __Boolean__ -- and it probably is the easiest type there is.
+## 布林值(Boolean)
 
-There are only two Boolean objects:
+很快的，你學到了一個新的 Python 物件型別。這稱為 __布林值(Boolean)__ -- 這或許是一種最簡單的型別。
+
+這裡是兩個 Boolean 物件
 - True
 - False
 
-But for Python to understand this, you need to always write it as True (first letter uppercased, with the rest of the letter lowercased). __true, TRUE, tRUE won't work -- only True is correct.__ (The same applies to False as well, of course.)
+為了讓 Python 知道那是布林值，你必須把它寫成像這樣 True（字首大寫，其餘小寫）。__true, TRUE, tRUE 都不會有作用 -- 只有 True 是正確的。__ （當然囉，False 亦同）
 
-Booleans can be variables, too! See here:
+Boolean 也值可以存成變數！像這樣：
 
     >>> a = True
     >>> a
     True
 
-You can also do it this way:
+你也可以這麼做：
 
     >>> a = 2 > 5
     >>> a
     False
 
-Practice and have fun with Booleans by trying to run the following commands:
+玩一玩練習一下 Boolean 值，運行下面的指令：
 
 - `True and True`
 - `False and True`
 - `True or 1 == 1`
 - `1 != 2`
 
-Congrats! You can now move on to an essential tool in programming:
+恭喜！你現在要進入到程式設計裡面最主要的一個段落了：
+
 
 ## If...elif...else
 
-Lots of things in code should only be executed when given conditions are met. That's why Python has something called __if statements__.
+在程式運行時，很多時候就只是在判斷一些設定條件是不是符合而已。這就是為什麼 Python 中有個東西叫做 __if 判斷式__ 。
 
-Try this:
+試一下：
 
     >>> if 3 > 2:
     ...
 
-So far nothing has happened, as evidenced by the dots `...` instead of incentives `>>>` which we saw so far. Python expects us to give further instructions to it which are supposed to be executed if the condition `3 > 2` turns out to be true (or `True` for that matter). Let’s try to make Python print “It works!”:
+目前為止，除了本來應該是 `>>>` 的地方出現了點點點 `...` 以外，Python 毫無反應。Python 預期我們會給出更多的說明來讓它執行一個 if 的 `3 > 2` 成立的條件式。我們來讓 Python 印出 "It works!"：
 
     >>> if 3 > 2:
     ... print('It works!')
@@ -420,16 +422,16 @@ So far nothing has happened, as evidenced by the dots `...` instead of incentive
             ^
     IndentationError: expected an indented block
 
-Well... something went wrong here! Python needs to know whether the instruction we have written is a continuation of `if` or a next instruction not covered by the condition. We need to indent our code to make it work:
+呃... 這裡出了一些錯！Python 需要知道這些說明是不是接續在 `if` 敘述之後，或者這是另外一個與條件式無關的段落。我們必須縮排這行 code 讓它可以運行：
 
     >>> if 3 > 2:
     ...     print('It works!')
     ...
     It works!
 
-All you need is one space after `...`. To avoid chaos, most Python programmers use four spaces for each level of indentation.
+然後你又有一行在 `...` 後面的空白了。為了避免雜亂無章，多數的 Python 程序員習慣使用 4 個空白作為縮排。
 
-Everything that is indented after the `if` statement will be executed if the condition is met. See:
+所有在 `if` 判斷式後面的程式碼都縮排了，在條件符合的狀況下都會被執行。看吧：
 
     >>> if 3 > 2:
     ...     print('It works!')
@@ -438,9 +440,9 @@ Everything that is indented after the `if` statement will be executed if the con
     It works!
     Another command
 
-### What if not?
+### 如果我們不想要這樣呢？
 
-In previous examples, code was executed only when the conditions were True. But Python also has `elif` and `else` statements:
+在前一個範例中，這些程式碼只會在條件是成立的時候被執行。但 Python 還有 `elif` 與 `else` 判斷式：
 
     >>> if 5 > 2:
     ...     print('5 is indeed greater than 2')
@@ -449,7 +451,7 @@ In previous examples, code was executed only when the conditions were True. But 
     ...
     5 is indeed greater than 2
 
-If 2 were a greater number than 5, then the second command would be executed. Easy, right? Let's see how `elif` works:
+如果 2 大於 5，那第二段指令就會被執行。很簡單吧？我們看看 `elif` 如何運作：
 
     >>> name = 'Sonja'
     >>> if name == 'Ola':
@@ -461,17 +463,19 @@ If 2 were a greater number than 5, then the second command would be executed. Ea
     ...
     Sonja!
 
-See what happened there?
+看看會發生什麼事吧？
 
-### Summary
 
-In the last three exercises you learned about:
+### 總結
 
-- __comparing things__ - in Python you can compare things by using `>`, `>=`, `==`, `<=`, `<` and the `and`, `or` operators
-- __Boolean__ - a type of object that can only have one of two values: `True` or `False`
-- __if...elif...else__ - statements that allow you to execute code only when certain conditions are met.
+在剛剛的三個練習中，你已經學到：
 
-Time for the last part of this chapter!
+- __比對__ - 在 Python 中你可以用 `>`, `>=`, `==`, `<=`, `<` 和 `and`, `or` 來比對東西
+- __Boolean__ - 一種只有兩種值的物件型別： `True` 或 `False`
+- __if...elif...else__ - 判斷式讓你可以在條件符合的狀況下執行相應的程式碼
+
+現在是時候進入到最後一章了！
+
 
 ## Your own functions!
 
