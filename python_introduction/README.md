@@ -1,34 +1,36 @@
-# Introduction to Python
+# 初試 Python
 
-> Part of this chapter is based on tutorials by Geek Girls Carrots (http://django.carrots.pl/).
+> 部分章節是來自怪咖女孩 Carrots (http://django.carrots.pl/)
 
-Let's write some code!
+我們來寫些程式碼吧！
 
-## Python prompt
 
-To start playing with Python, we need to open up a *command line* on your computer. You should have already knew how to do that -- you have learned it in the [Intro to Command Line](/intro_to_command_line/README.html) chapter.
+## Python 的命令提示字元
 
-Once you're ready, follow the instructions below.
+開始玩 Python 之前，我們需要在電腦上打開命令行視窗（就是終端機）。你應該已經知道那是什麼了 -- 你已經學過了 [命令行簡介](/intro_to_command_line/README.html) 一節。
 
-We want to open up a Python console, so type in `python3` and hit Enter.
+一旦你準備好了，就按著下面的步驟來吧。
+
+現在，我們想打開 Python 自己的主控台(console)，讓我們輸入 `python3` 然後按下 Enter。
 
     $ python3
     Python 3.4.1 (...)
     Type "copyright", "credits" or "license" for more information.
     >>>
 
-## Your first Python command!
 
-After running the Python command, the prompt changed to `>>>`. For us this means that for now we may only use commands in the Python language. You don't have to type in `>>>` - Python will do that for you.
+## 你的第一個 Python 指令!
 
-If you want to exit the Python console at any point, just type `exit()` or use the shortcut `Ctrl + Z` for Windows and `Ctrl + D` for Mac/Linux. Then you won't see `>>>` any longer.
+在運行了 Python 指令後，命令提示字元就改變成 `>>>` 了。對我們來說這是代表現在我們只能在這裡使用 Python 語言的指令。你不需要輸入 `>>>` - Python 本身已經幫你輸入好了。
 
-But now, we don't want to exit the Python console. We want to learn more about it. Let's start with something really simple. For example, try typing some math, like `2 + 3` and hit Enter.
+如果你隨時想要離開 Python 主控台的話，就輸入 `exit()` 或是在 Windows 環境下按下熱鍵 `Ctrl + Z`，在 Mac/Linux 環境下按下熱鍵 `Ctrl + D` ，然後你就不會再看見 `>>>` 了。
+
+但現在，我們還不想離開 Python 主控台，我們想要學習更多關於它的事。讓我們從最簡單的開始，舉例來說，試著輸入一點數學，像是`2 + 3` 然後按下 Enter。
 
     >>> 2 + 3
     5
 
-Nice! See how the answer popped out? Python knows math! You could try other commands like:
+幹得好！現在看看視窗跳出什麼來了？Python 懂數學耶！你可以嘗試其他指令像是：
 - `4 * 5`
 - `5 - 1`
 - `40 / 2`

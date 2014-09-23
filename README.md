@@ -4,6 +4,8 @@
 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by-sa/4.0/
 
+這個版本由 @shesee 翻譯，同樣遵循此版權。
+
 
 ## 介紹
 
@@ -29,4 +31,4 @@ http://creativecommons.org/licenses/by-sa/4.0/
 
 ## About and contributing
 
-This tutorial is maintained by [DjangoGirls](http://djangogirls.org/). If you find any mistakes or want to update the tutorial please [follow the contributing guidelines](https://github.com/DjangoGirls/tutorial/blob/master/CONTRIBUTING.md).
+這是 [DjangoGirls Taipei](http://djangogirls.org/taipei) 中譯版教材. 如果你發現任何錯誤並且想要更新它歡迎 Fork [這個專案](http://github.com/carolhsu/tutorial)，本書全冊可於 GitBook [Django Girls' Tutorial 中文版教材](http://djangogirls.org/taipei) 上閱讀。
