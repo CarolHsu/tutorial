@@ -238,83 +238,85 @@
 
 ## 字典(Dictionaries)
 
-
-A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number. The syntax to define an empty dictionary is:
+Dictionary 和 List 有點像，差別在於，你可以用鍵值(key)而非索引值(index)來取得在 Dictionary 中的值(value)。一個 key 可以是字串或數字。你可以使用兩個大括號來宣告一個 dictionary：
 
     >>> {}
     {}
 
-This shows that you just created an empty dictionary. Hurray!
+這樣就創建了一個空字典，喲齁！
 
-Now, try writing the following command (try replacing your own information too):
+現在，試著輸入下面指令（你也可以試著輸入你自己的資訊）：
 
     >>> participant = {'name' : 'Ola', 'country' : 'Poland', 'favorite_numbers' : [7, 42, 92]}
 
-With this command, you just created a variable named `participant` with three key-value pairs:
+使用這個指令，你就等於是宣告了一個叫做 `participant` 的 key-value 結對變數：
 
-- The key `name` points to the value `'Ola'` (a `string` object),
-- `country` points to `'Poland'` (another `string`),
-- and `favorite_numbers` points to `[7, 42, 92]` (a `list` with three numbers in it).
+- `name` 這個 key 對應到 `'Ola'` 這個 value (一個 `字串(string)` 物件),
+- `country` 對應到 `'Poland'` (另一個 `字串(string)`),
+- 還有 `favorite_numbers` 對應到 `[7, 42, 92]` (一個包含了三個數字在內的 `串列(list)` ).
 
-You can check the content of individual keys with this syntax:
+你可以指定特殊的 key 來檢查內容，語法如下：
 
     >>> print(participant['name'])
     Ola
 
-See, it's similar to a list. But you don't need to remember the index - just the name.
+你看，和 List 有點像。不過你就不需要再記住索引值(index)了 - 就變成一個好記的名稱。
 
-What happens if we ask Python the value of a key that doesn't exist? Can you guess? Let's try it and see!
+如果你向 Python 要一個不存在的 key 所對應的 value 的話會發生什麼事呢？我們試試看吧！
 
     >>> participant['age']
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     KeyError: 'age'
 
-Look, another error! This one is a **KeyError**. Python is helpful and tells you that the key `'age'` doesn't exist in this dictionary.
+看到了吧，又是一個錯誤訊息，這次是 **KeyError** 。Python 會讓你知道這個 `'age'` key 事實上是不存在目前的 dictionary 中的。
 
-When to use a dictionary or a list? Well, a good point to ponder on. Just have a solution in mind before looking at the answer in the next line.
+什麼時候要用 List，什麼時候又要用 Dictionary 呢？嗯，這個問題值得深思。再看看下面內容前先把這個問題放在心裡吧。
 
-- Do you just need an ordered sequence of items? Go for a list.
-- Do you need to associate values with keys, so you can look them up efficiently (by key) later on? Use a dictionary.
+- 你是不是只是需要一個有序的序列呢？就使用 List 吧。
+- 你需要有 key 值的 value，好讓你可以更有效率地找到特定值嗎？那就使用 Dictionary 吧。
 
-Dictionaries are mutable like "lists" meaning that they can be changed after they are created. You can add new key/value pairs to the dictionary after it is created, like:
+Dictionary 也像 "List" 一樣，可以默默地把它裡面的東西做點改變，你可以加入一對新的 key/value 值像這樣：
 
     >>> participant['favorite_language'] = 'Python'
 
-Like the lists, using `len()` method on the dictionaries, returns the number of key-value pairs in the dictionary. Go ahead and type in the command:
+如同 List，Dictionary 也可以使用 `len()` ，回傳 Dictionary 總共有幾對 key-value 值吧，輸入下面指令：
 
     >>> len(participant)
     4
 
-I hope it makes sense uptil now. :) Ready for some more fun with dictionaries? Hop on the next line for some amazing things.
+我希望目前為止對你來說都還可以了解。 :) 準備好玩玩更多有趣的 Dictionary 了嗎？跳到下一行看看一些很酷的事情吧。
 
-You can use the `del` command to delete an item in the dictionary. Say, if you want to delete the entry corresponding to the key `'favorite_numbers'`, just type in the following command:
+你可以使用 `del` 指令來刪除 Dictionary 中的項目。使用它，如果你想要刪掉一個叫做 `'favorite_numbers'` 的 key，就輸入下面指令：
 
     >>> del participant['favorite_numbers']
     >>> participant
     {'country': 'Poland', 'favorite_language': 'Python', 'name': 'Ola'}
 
-As you can see from the output, the key-value pair corresponding to 'favorite_numbers' key has been deleted.
+輸出結果如你所見，符合 'favorite_numbers' 的 key-value 數對已經被刪除了。
 
-Apart from this, you can also change a value associated with an already created key in the dictionary. Type:
+除此之外，你也可以改變已經建立的 Dictionary 中的特定值，輸入：
 
     >>> participant['country'] = 'Germany'
     >>> participant
     {'country': 'Germany', 'favorite_language': 'Python', 'name': 'Ola'}
 
-As you can see, the value of the key `'country'` has been altered from `'Poland'` to `'Germany'`. :) Exciting? Hurrah! You just learnt another amazing thing.
+一樣如同你所看見的，一個 key 值為 `'country'` 的值從 `'Poland'` 變成了 `'Germany'`。 :) 興奮嗎？喲齁！你剛剛學到更多超棒的知識了！
 
-### Summary
 
-Awesome! You know a lot about programming now. In this last part you learned about:
+### 總結
 
-- __errors__ - you now know how to read and understand errors that show up if Python doesn't understand a command you've given it
-- __variables__ - names for objects that allow you to code more easily and to make your code more readable
-- __lists__ - lists of objects stored in a particular order.
+太完美了！你現在了解更多程式設計的知識了。在上面你學到了：
 
-Excited for the next part? :)
+- __錯誤訊息__ - 當 Python 看不懂你給的指令時，你現在知道怎麼去閱讀並且了解錯誤訊息的意思了
+- __變數__ - 這是物件的名字，讓你可以更輕鬆的寫程式，也讓你的程式更具可讀性
+- __串列__ - 可以用特定順序來儲存多個物件的清單
 
-## Compare things
+人生要進階了，興奮嗎？ XDDDD
+
+
+## 比較(compare)
+
 
 A big part of programming includes comparing things. What's the easiest thing to compare? Numbers, of course. Let's see how that works:
 
