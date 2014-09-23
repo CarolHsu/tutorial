@@ -183,59 +183,61 @@
 
 ## 串列(List)
 
-Beside strings and integers, Python has all sorts of different types of objects. Now we're going to introduce one called __list__. Lists are exactly what you think they are: they are objects which are lists of other objects :)
+除了字串和整數，Python 還有一堆不同形態的物件。現在我們要介紹的稱為 __串列(list)__。List 就是你想的那樣：它是一個列出一堆物件的物件 XD
 
-Go ahead and create a list:
+開始建立一個 List 吧：
 
     >>> []
     []
 
-Yes, this list is empty. Not very useful, right? Let's create a list of lottery numbers. We don't want to repeat ourselves all the time, so we will put it in a variable, too:
+對沒錯，這就是一個空的 List。看起來沒什麼用啊... 我們來建立一組包含樂透彩數字的 List 吧。我們不想每次都重覆輸入這個長的 List，所以我們就把它存進一個變數裡吧：
 
     >>> lottery = [3, 42, 12, 19, 30, 59]
 
-All right, we have a list! What can we do with it? Let's see how many lottery numbers there are in a list. Do you have any idea which function you should use for that? You know this already!
+好了，我們有一個 List 了！我們可以拿它來幹嘛？來看看這個 List 的長度吧。你想到可以用什麼函數了嗎？沒錯就是它！
 
     >>> len(lottery)
     6
 
-Yes! `len()` can give you a number of objects in a list. Handy, right? Maybe we will sort it now:
+賓果！ `len()` 可以告訴你這個 List 有多長。真是太神奇了傑克！或許我們還可以幫這個 List 排序：
 
     >>> lottery.sort()
 
-This doesn't return anything, it just changed the order in which the numbers appear in the list. Let's print it out again and see what happened:
+這不會回傳任何值，只是默默的的改變了 List 中數字們的順序。我們把它印出來看看發生了什麼事吧：
 
     >>> print(lottery)
     [3, 12, 19, 30, 42, 59]
 
-As you can see, the numbers in your list are now sorted from the lowest to highest value. Congrats!
+如你所見，這串 List 數字已經從小到大排序了。恭喜囉！
 
-Maybe we want to reverse that order? Let's do that!
+那如果我們想要反排序呢？試試看吧！
 
     >>> lottery.reverse()
     >>> print(lottery)
     [59, 42, 30, 19, 12, 3]
 
-Easy, right? If you want to add something to your list, you can do this by typing this command:
+很簡單對吧？如果你還想替 List 新加一點東西，可以輸入這個指令：
 
     >>> lottery.append(199)
     >>> print(lottery)
     [59, 42, 30, 19, 12, 3, 199]
 
-If you want to show only the first number, you can do this by using __indexes__. An index is the number that says where in a list an item occurs. Computer people like to start counting at 0, so the first object in your list is at index 0, the next one is at 1, and so on. Try this:
+如果你只想要秀某一個數字，你可以使用 __索引(index)__ 來指定。索引就是一個指出 List 某個物件位置的數字，電腦宅們喜歡讓索引從 0 開始，所以你的 List 中的第一個物件的索引就是 0，下一個物件則是 1，以此類推，試試看這些：
 
     >>> print(lottery[0])
     59
     >>> print(lottery[1])
     42
 
-As you can see, you can access different objects in your list by using the list's name and the object's index inside of square brackets.
+如你所見，你可以呼叫 List 變數的名字並指定索引值，並將索引值放在中括號 `[]` 中，來取得 List 裡不同的物件。
 
-For extra fun, try some other indexes: 6, 7, 1000, -1, -6 or -1000. See if you can predict the result before trying the command. Do the results make sense?
+還有更多好玩的，試試看這些索引值： 6, 7, 1000, -1, -6 or -1000。看看你能不能在輸入指令前就預測到結果，這些結果合理嗎？
 
-You can find a list of all available list methods in this chapter of the Python documentation: https://docs.python.org/3/tutorial/datastructures.html
+你可以在這個 Python 文件章節中，找到所有支援 List 物件的方法(method)：https://docs.python.org/3/tutorial/datastructures.html
 
-## Dictionaries
+
+## 字典(Dictionaries)
+
 
 A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number. The syntax to define an empty dictionary is:
 
