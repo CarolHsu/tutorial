@@ -35,121 +35,125 @@
 - `5 - 1`
 - `40 / 2`
 
-Have fun with this for a little while and then get back here :).
 
-As you can see, Python is a great calculator. If you're wondering what else you can do...
+放輕鬆隨意玩會兒，待會再回來學習新進展 :)
 
-## Strings
+如你所見，Python 是很棒的計算機。如果你還好奇你還可以拿它來做些什麼...
 
-How about your name? Type your first name in quotes like this:
+
+## 字串
+
+那輸入你的名字呢？你可以像下面這樣試試看：
 
     >>> "Ola"
     'Ola'
 
-You've now created your first string! It's a set of characters that can be processed by a computer. The string must always begin and end with the same character. This may be an apostrophe (`'`) or double quotes (`"`) - they tell Python that what's inside of them is a string.
+你現在已經創造了你的第一個字串！這是一個可以被電腦運用的字元集合。字串通常會存在以一個同樣的字元來起頭和結束，或許是一個單引號 (`'`) 或者雙引號 (`"`) - 這會讓 Python 知道引號中的東西是一個字串。
 
-Strings can be strung together. Try this:
+字串們也可以被串在一起，試試看這招：
 
     >>> "Hi there " + "Ola"
     'Hi there Ola'
 
-You can also multiply strings with a number:
+你也可以用一個數字來把字串乘起來：
 
     >>> "Ola" * 3
     'OlaOlaOla'
-    
-If you need to put an apostrophe inside your string, you have two ways to do it.
 
-Using double quotes:
+還有，如果你想要放一個單引號在你的字串裡面，你有兩種方式可以達成這個目標。
+
+使用雙引號來宣告字串：
 
     >>> "Runnin' down the hill"
     "Runnin' down the hill"
     
-or escaping apostrophe with a backslash (`\`):
+或者，在想要加入的單引號前面給他一個反斜線 (`\`):
 
     >>> 'Runnin\' down the hill'
     "Runnin' down the hill"
 
-Nice, huh? To see your name in uppercase letters, simply type:
+不賴吧？去看看如何把你的名字全部換成大寫，簡單的輸入這個：
 
     >>> "Ola".upper()
     'OLA'
 
-You just used the `upper` __function__ on your string! A function (like `upper()`) is a set of instructions that Python has to perform on a given object (`"Ola"`) once you call it.
+你只需要用 `upper` 這個 __函數(function)__ 在你的字串後面就可以了！一個函數（像是 `upper()`）就是一個指令集，讓 Python 可以在這個 (`"Ola"`) 物件(object)中展現你呼叫這個函數的效果。
 
-If you want to know the number of letters contained in your name, there is a function for that too!
+如果你想要知道你的名字總共有幾個字元，也有相對應的函數可以叫用！
 
     >>> len("Ola")
     3
 
-Wonder why sometimes you call functions with a `.` at the end of a string (like `"Ola".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Ola"` as a parameter to the `len` function.
+你應該很好奇，為什麼有時候你會在字串結尾用 `.` 來叫用一個函數（例如 `"Ola".upper()`），但有時你會先呼叫函數，然後把字串放在括號中？嗯，在某些狀況下，函數屬於某個物件，像是 `upper()` ，這個函數就只能表現在字串上。在這個狀況下，我們可以稱呼這類型函數為 __方法(method)__。其他時候，函數不屬於任何特定的類型或物件，可為各種不同類型或物件所用，像是 `len()`。這是為什麼我們可以在 `len()` 這個函數中放入一個 `"Ola"` 字串作為參數。
 
-### Summary
 
-OK, enough of strings. So far you've learned about:
+### 總結
 
-- __the prompt__ - typing commands (code) into the Python prompt results in answers in Python
-- __numbers and strings__ - in Python numbers are used for math and strings for text objects
-- __operators__ - like + and *, combine values to produce a new one
-- __functions__ - like upper() and len(), perform actions on objects.
+好了，說夠了字串。目前為止你學到了：
 
-These are the basics of every programming language you learn. Ready for something harder? We bet you are!
+- __命令提示字元(prompt)__ - 在 Python 的命令提示字元下輸入指令（程式碼）來得到結果
+- __數字(number)及字串(string)__ - 在 Python 中數字可計算，而字串表示一個文字物件
+- __運算子(operator)__ - 像是 + 與 *, 可結合兩個數值進行運算產生一個新的值
+- __函數(function)__ - 像是 upper() 與 len(), 讓物件展現出某種行為
 
-## Errors
+你剛剛學到的是所有程式語言的基礎。準備好接受更多挑戰了嗎？來吧！
 
-Let's try something new. Can we get the length of a number the same way we could find out the length of our name? Type in `len(304023)` and hit Enter:
+## 錯誤訊息
+
+我們來試試新的東西。看看我們能不能使用找到我們名字長度的那個函數，來得到某個數字的長度呢？輸入 `len(304023)` 按下 Enter:
 
     >>> len(304023)
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     TypeError: object of type 'int' has no len()
 
-We got our first error! It says that objects of type "int" (integers, whole numbers) have no length. So what can we do now? Maybe we can write our number as a string? Strings have a length, right?
+恭喜！我們得到了我們的第一個錯誤訊息！它抱怨說這個物件的類型是 "int" (integer, 整數) 所以根本沒有長度這件事。所以我們現在應該怎麼辦呢？或許我們可以把我們這個數字寫成一個字串看看如何？字串就有長度啦，對吧？
 
     >>> len(str(304023))
     6
 
-It worked! We used the `str` function inside of the `len` function. `str()` converts everything to strings.
+看起來成功了！我們在 `len` 函數中使用了 `str` 這個函數去把任何物件轉成字串。
 
-- The `str` function converts things into __strings__
-- The `int` function converts things into __integers__
+- `str` 函數可將物件轉為 __字串__
+- `int` 函數可將物件轉為 __整數__
 
-> Important: we can convert numbers into text, but we can't necessarily convert text into numbers - what would `int('hello')` be anyway?
+> 重要：我們可以轉數字為字串，但我們不必然能把文字轉為數字 - 想想看要是 `int('hello')` 會有怎樣的結果？
 
-## Variables
 
-An important concept in programming is variables. A variable is nothing more than a name for something so you can use it later. Programmers use these variables to store data, make their code more readable and so they don't have to keep remembering what things are.
+## 變數
 
-Let's say we want to create a new variable called `name`:
+一個重要的程式觀念叫做變數(variables)。一個變數其實沒什麼，就是一個你稍後可以叫用的一個名字。程序員使用這些變數去儲存資料，讓他們的程式碼有更高的可讀性，這樣他們就不必一直記得那些資料是什麼。
+
+所以我們就說好吧，現在我們做了一個新的變數叫做 `name`:
 
     >>> name = "Ola"
 
-You see? It's easy! It's simply: name equals Ola.
+你看吧？就這麼簡單！其實只代表一件事情：這個叫做 name 的變數等於 "Ola" 這個字串。
 
-As you've noticed, your program didn't return anything like it did before. So how do we know that the variable actually exists? Simply enter `name` and hit Enter:
+如同你所注意到的，你的程式沒有回傳任何你宣告的東西。所以我們如何得知我們所宣告的變數確實存在呢？簡單的輸入 `name` 然後按下 Enter:
 
     >>> name
     'Ola'
 
-Yippee! Your first variable :)! You can always change what it refers to:
+呀比！你的第一個變數啊啊啊 :)！你可以隨時改變它的值像這樣：
 
     >>> name = "Sonja"
     >>> name
     'Sonja'
 
-You can use it in functions too:
+你也可以在函數中使用它：
 
     >>> len(name)
     5
 
-Awesome, right? Of course, variables can be anything, so numbers too! Try this:
+太完美了，對吧？當然，變數可以是任何東西，數字亦然！試試看這個：
 
     >>> a = 4
     >>> b = 6
     >>> a * b
     24
 
-But what if we used the wrong name? Can you guess what would happen? Let's try!
+但是萬一我們叫錯變數了呢？你可以猜到會發生什麼事情嗎？讓我們試試看吧！
 
     >>> name = "Maria"
     >>> names
@@ -157,14 +161,14 @@ But what if we used the wrong name? Can you guess what would happen? Let's try!
       File "<stdin>", line 1, in <module>
     NameError: name 'names' is not defined
 
-An error! As you can see, Python has different types of errors and this one is called a **NameError**. Python will give you this error if you try to use a variable that hasn't been defined yet. If you encounter this error later, check your code to see if you've mistyped any names.
+又是一個錯誤訊息！如同你所見，Python 有各式各樣的錯誤訊息，這個就叫做一個 **NameError**。Python 會在你試圖使用一個從未宣告的變數時給你這個錯誤訊息。如果你得到像這樣的錯誤，就回頭看看你的程式碼裡面是不是有什麼變數的名字是打錯的。
 
-Play with this for a while and see what you can do!
+玩一會兒吧，看看你還能做什麼！
 
 
-## The print function
+## Print（印出） 函數
 
-Try this:
+試試這招：
 
     >>> name = 'Maria'
     >>> name
@@ -172,12 +176,12 @@ Try this:
     >>> print(name)
     Maria
 
-When you just type `name`, the Python interpreter responds with the string *representation* of the variable 'name', which is the letters M-a-r-i-a, surrounded by single quotes, ''.  When you say `print(name)`, Python will "print" the contents of the variable to the screen, without the quotes, which is neater.
+當你只是輸入 `name`，Python 直譯器會馬上回應你變數 `name` 所代表的字串，就是個用單引號包起來的 M-a-r-i-a 字母們。當你說 `print(name)` ，Python 就會在螢幕上「印出」這個變數的乾淨內容，沒有引號。
 
-As we'll see later, `print()` is also useful when we want to print things from inside functions, or when we want to print things on multiple lines.
+就像是我們稍後會看到的， 當我們想要印出某些東西時，或是想要印出一個有很多行的東西時，`print()` 就是個超有用的函數。
 
 
-## Lists
+## 串列(List)
 
 Beside strings and integers, Python has all sorts of different types of objects. Now we're going to introduce one called __list__. Lists are exactly what you think they are: they are objects which are lists of other objects :)
 
