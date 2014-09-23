@@ -3,7 +3,7 @@
 * [介紹](README.md)
 * [網際網路(Internet)是如何運作的？](how_internet_works/README.md)
 * [命令行(command-line)簡介](intro_to_command_line/README.md)
-* [Python installation](python_installation/README.md)
+* [安裝 Python](python_installation/README.md)
 * [Introduction to Python](python_introduction/README.md)
 * [What is Django?](django/README.md)
 * [Django installation](django_installation/README.md)
