@@ -477,30 +477,31 @@ Boolean 也值可以存成變數！像這樣：
 現在是時候進入到最後一章了！
 
 
-## Your own functions!
+## 你自己的函數!
 
-Remember functions like `len()` that you can execute in Python? Well, good news, you will learn how to write your own functions now!
+還記得你先前在 Python 中執行過像是 `len()` 這樣的函數嗎？嗯，好消息，你將可以學習如何寫一個屬於你自己的函數囉！
 
-A function is a set of instructions that Python should execute. Each function in Python starts with the keyword `def`, is given a name and can have some parameters. Let's start with an easy one:
+一個函數就是一堆 Python 應該執行哪些行為的集合。在 Python 中每個函數都用一個關鍵字 `def` 來宣告，可以被賦予一個名稱與一些參數。我們來做一個簡單的：
 
     >>> def hi():
     ...
 
-As you can see, there are those dots again! This means that nothing has really happened yet... and yes, we need to press the `Space` key before giving our instructions:
+如你所見，這裡又出現點點們了！這代表你還可以繼續說些話... 以及沒錯，在做更多描述錢，我們需要按幾次空白鍵：
 
     >>> def hi():
     ...     print('Hi there!')
     ...     print('How are you?')
     ...
 
-OK, our first function is ready! Press Enter to get back to the Python prompt again. Now let's execute our function:
+好了，我們的第一個函數完成了！按下 Enter 再次回到 Python 命令提示字元。現在我們來執行我們的函數：
 
     >>> hi()
     Hi there!
     How are you?
 
-Great! You're now a programmer, congratulate yourself :)!
+棒極了！你現在是個程序員了，恭喜一下自己吧 :)！
 
+這真是簡單！
 That was easy! Let's build our first function with parameters. We will use the previous example - a function that says 'hi' to the person running it - with a name:
 
     >>> def hi(name):
