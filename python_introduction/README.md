@@ -501,13 +501,12 @@ Boolean 也值可以存成變數！像這樣：
 
 棒極了！你現在是個程序員了，恭喜一下自己吧 :)！
 
-這真是簡單！
-That was easy! Let's build our first function with parameters. We will use the previous example - a function that says 'hi' to the person running it - with a name:
+這真是簡單！讓我們來建立自己的第一個有參數的函數吧。我們將會使用前一個範例 - 一個會對某個人說 'hi' 的函數，並且執行它 - 並帶有一個名字：
 
     >>> def hi(name):
     ...
 
-As you can see, we now gave our function a parameter that we called `name`:
+如你所見，我們現在讓這個函數帶有一個叫做 `name` 的參數：
 
     >>> def hi(name):
     ...     if name == 'Ola':
@@ -518,16 +517,16 @@ As you can see, we now gave our function a parameter that we called `name`:
     ...         print('Hi anonymous!')
     ...
 
-As you can see, we needed to put two spaces before the `print` function, because `if` needs to know what should happen when the condition is met. Let's see how it works now:
+這裡你可以看到，我們需要放兩個縮排在 `print` 函數前面了，因為 `if` 需要知道接下來的條件符合的話會發生什麼事。我們來看看現在他運作得如何：
 
     >>> hi()
         Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     TypeError: hi() missing 1 required positional argument: 'name'
 
-Oops, an error. Luckily, Python gives us a pretty useful error message.
-It tells us that the function `hi()` (the one we defined) has one required argument (called `name`) and that we forgot to pass it when calling the function.
-Let's fix it then:
+喔喔，一個錯誤訊息。很幸運的，Python 給我們一個非常有用的錯誤訊息。它告訴我們這個叫做 `hi()` 的函數（就我們剛剛定義的那個）要求必須傳入一個參數（就是 `name`），只是我們叫用這個函數的時候忘記忘記傳入了。
+
+我們把它修好吧：
 
     >>> hi("Ola")
     Hi Ola!
@@ -536,37 +535,38 @@ Let's fix it then:
     >>> hi("Anja")
     Hi anonymous!
 
-Awesome, right? This way you don't have to repeat yourself every time you want to change the name of the person the function is supposed to greet. And that's exactly why we need functions - you never want to repeat your code!
+太完美了！這下子當你需要換個人名說 hi 的時候，你就不需要一直重複做一樣的事情。這就是為什麼我們如此需要函數 - 你永遠不會想要重複你的程式碼！
 
-Let's do something smarter -- there is more names than two, and writing a condition for each would be hard, right?
+我們再來做點更聰明的事 -- 如果我們有兩個以上的人名，寫兩次差不多的句子真的很累對吧？
 
     >>> def hi(name):
     ...     print('Hi ' + name + '!')
     ...
 
-Let's call the function now:
+現在我們可以叫用這個函數了：
 
     >>> hi("Rachel")
     Hi Rachel!
 
-Congratulations! You just learned how to write functions :)!
+恭喜！你剛剛學到如何寫一個函數了 :) ！
 
-## Loops
 
-That's the last part already. That was quick, right? :)
+## 迴圈(Loop)
 
-As we mentioned, programmers are lazy, they don't like to repeat themselves. Programming is all about automating things, so we don't want to greet every person by their name manually, right? That's where loops come in handy.
+現在就是最後一步了，進展滿快的呢 :)
 
-Still remember lists? Let's do a list of girls:
+就像我們先前所提到的，程序員很懶，他們很討厭重複自己。程式設計應該是一件完全自動化的事情，所以我們不希望手動去對每個不同的人名說嗨，沒錯吧？所以迴圈的出現非常好用。
+
+還記得 List 嗎？我們來做一個女孩 List:
 
     >>> girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
 
-We want to greet all of them by their name. We have the `hi` function to do that, so let's use it in a loop:
+我們想要對每個人的名字說嗨。我們已經有一個 `hi` 函數可以用了，我們讓我們把這個函數放在迴圈之中：
 
     >>> for name in girls:
     ...
 
-Dots again! Remember what goes after the dots? Yes, a space :)
+噢又是點點們！記得點點出現時要做什麼事情嗎？沒錯，縮排 :)
 
     >>> for name in girls:
     ...     hi(name)
@@ -583,9 +583,9 @@ Dots again! Remember what goes after the dots? Yes, a space :)
     Hi You!
     Next girl
 
-As you can see, everything you will put inside a `for` statement with space will be repeated for every element of the list `girls`.
+如你所見，你利用縮排將一些程式碼放在 for 判斷式之中都會重複執行，而且會逐次帶入 List 中的女孩名字。
 
-You can also use `for` on numbers using the `range` method:
+你也可以用 for 來帶入一個數字範圍：
 
     >>> for i in range(1, 6):
     ...     print(i)
@@ -596,18 +596,20 @@ You can also use `for` on numbers using the `range` method:
     4
     5
 
-`range` is a function that creates a list of numbers following one after the other (these numbers are provided by you as parameters).
+`range` 是個可以建立兩個數字範圍中所有數字 List 的函數（這兩個數字來自由你提供的參數）
 
-Note that the second of these two numbers is not included in the list that is output by Python (meaning `range(1, 6)` counts from 1 to 5, but does not include the number 6).
+要注意的是，在 Python 中，range 會輸出第二個參數的前一個整數（就是說如果有一個函數 `range(1, 6)` 就會輸出 1 到 5，但不會包含數字 6）。
 
-## Exiting Python
 
-You can exit Python and return to the command line using `exit()`.
+## 離開 Python 主控台
 
-## Summary
+你可以用指令 `exit()` 來離開 Python 主控台。
 
-That's it. __You totally rock!__ This really wasn't so easy, so you should feel proud of yourself. We're definitely proud of you for making it to here!
 
-Grab yourself a cupcake and go to the next chapter :)
+## 總結
 
-![Cupcake](images/cupcake.png)
+這就是全部了。 __你真是酷斃了！__ 這真的很不簡單，所以你可以為你自己鼓鼓掌。我們也超級為你可以走到這裡感到驕傲！
+
+進行到下一章之前抓個杯子蛋糕來吃吧 :)
+
+![杯子蛋糕](images/cupcake.png)
