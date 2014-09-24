@@ -1,94 +1,96 @@
-# Django installation
+# 安裝 Django
 
-> Part of this chapter is based on tutorials by Geek Girls Carrots (http://django.carrots.pl/).
+> 部分章節是來自怪咖女孩 Carrots (http://django.carrots.pl/)
 
-> Part of this chapter is based on the [django-marcador
+> 部分章節是來自 [django-marcador
 tutorial](http://django-marcador.keimlink.de/) licensed under Creative Commons
 Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
 is copyrighted by Markus Zapke-Gründemann et al.
 
 
-## Virtual environment
+## 虛擬環境
 
-Before we install Django, we'll get you to install an extremely useful tool that will help keep your coding environment tidy on your computer. It's possible to skip this step, but it's highly recommended not to - starting with the best possible setup will save you a lot of trouble in the future!
+在我們安裝 Django 之前，我們會讓妳安裝一個超有用的工具，這可以讓你電腦中的 coding 環境保持乾淨。也可以跳過這個步驟，但是我們高度建議你不要 - 用最好的安裝方式起手可以節省你未來碰到許多麻煩的時間！
 
-So, let's create a **virtual environment** (also called a *virtualenv*). It will isolate your Python/Django setup on a per-project basis, meaning that any changes you make to one website won't affect any others you're also developing. Neat, right?
+所以我們來創建一個 **虛擬環境(virtual environment)** 吧（也拼做 *virtualenv*）。這會將你的 Python/Django 獨立為一個專案形態，表示你在一個網站專案所做的任何改變都不會影響到你同時在進行的其他網站專案，超乾淨的對吧！
 
-All you need to do is find a directory in which you want to create the `virtualenv`; your home directory, for example. On Windows it might look like `C:\Users\Name\` (where `Name` is the name of your login).
+你所需要做的事就是找到一個目錄去創建 這個 `virtualenv`；舉例而言，你的家目錄 (`/home`)，在 Windows 環境下會是 `C:\Users\Name\` （`Name` 會是你目前登入的使用者名稱）。
 
-For this tutorial we will be using a new directory `djangogirls` from your home directory:
+在這個教程中我們會在你的家目錄下使用一個新目錄 `djangogirls` ：
 
     mkdir djangogirls
     cd djangogirls
 
-We will make a virtualenv called `myvenv`. The general command will be in the format:
+我們會將會創建一個虛擬環境叫做 `myvenv`。這個指令基本的格式如下：
 
     python -m venv myvenv
 
+
 ### Windows
 
-To create a new `virtualenv`, you need to open the console (we told you about that a few chapters ago - remember?) and run `C:\Python\python -m venv venv`. It will look like this:
+創建一個新的 `virtualenv`，你需要打開終端機（我們已經在前面一些章節中告訴過你了 - 記得嗎？），並且執行 `C:\Python\python -m venv venv`。這會看起來像這樣
 
     C:\Users\Name\djangogirls> C:\Python34\python -m venv myvenv
 
-where `C:\Python34\python` is the directory in which you previously installed Python and `myvenv` is the name of your `virtualenv`. You can use any other name, but stick to lowercase and use no spaces. It is also good idea to keep the name short - you'll be referencing it a lot!
+`C:\Python34\python` 是你之前安裝 Python 的路徑，而 `myvenv` 則是你的 `virtualenv` 的名稱。你可以取自己喜歡的名稱，不過必須要是小寫並且沒有其他空白。保持名稱簡短是好主意 - 因為你將會常常提起它！
+
 
 ### Linux and OS X
 
-Creating a `virtualenv` on both Linux and OS X is as simple as running `python3 -m venv myvenv`.
-It will look like this:
+在 Linux 與 Mac 系統創建一個 `virtualenv` 就是很簡單的執行一下 `python3 -m venv myvenv`。看起來像這樣：
 
     ~/djangogirls$ python3 -m venv myvenv
 
-`myvenv` is the name of your `virtualenv`. You can use any other name, but stick to lowercase and use no spaces. It is also good idea to keep the name short - you'll be referencing it a lot!
+`myvenv` 則你的 `virtualenv` 名稱。你可以取自己喜歡的名稱，不過必須要是小寫並且沒有其他空白。保持名稱簡短是好主意 - 因為你將會常常提起它！
 
-> __NOTE:__ Initiating the virtual environment on Ubuntu 14.04 like this currently gives the following error:
+> __小提示:__ 在 Ubuntu 14.04 下初始化虛擬環境目前會給你以下的錯誤訊息：
 
 >     Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
 
-> To get around this, use the `virtualenv` command instead.
+> 將指令改為 `virtualenv` 可以避免掉這個問題
 
 >     ~/djangogirls$ sudo apt-get install python-virtualenv
 >     ~/djangogirls$ virtualenv myvenv
 
 
-## Working with virtualenv
+## 在虛擬環境下工作
 
-The command above will create a directory called `myvenv` (or whichever name you chose) that contains our virtual environment (basically bunch of directory and files). All we want to do now is starting it by running:
+以上的指令會創建一個叫做 `myvenv` 的目錄（或是你自己決定的任何名稱），裡面就是我們的虛擬環境。我們現在想要做的就是把這個虛擬環境執行起來：
 
     C:\Users\Name\djangogirls> myvenv\Scripts\activate
 
-on Windows, or:
+在 Windows 上, 或者:
 
     ~/djangogirls$ source myvenv/bin/activate
 
-on OS X and Linux.
+在 OS X 與 Linux 上.
 
-Remember to replace `myvenv` with your chosen `virtualenv` name!
+記得，如果你取了自己喜歡的名稱，就把指令中的 `myvenv` 代換掉！
 
-> __NOTE:__ sometimes `source` might not be available. In those cases try doing this instead:
+> __小提示:__ 有時候你系統中或許不支援 `source` 指令，在這個狀況下你可以使用以下方式：
 
 >     ~/djangogirls$ . myvenv/bin/activate
 
 
-
-You will know that you have `virtualenv` started when you see that the prompt in your console looks like:
+當你看到你的終端機的命令提示字元看起來像是下面這樣的時候，你就知道你現在是在 `virtualenv` 中：
 
     (myvenv) C:\Users\Name\djangogirls>
 
-or:
+或這樣:
 
     (myvenv) ~/djangogirls$
 
-Notice the prefix `(myvenv)` appears!
 
-When working within a virtual environment, `python` will automatically refer to the correct version so you can use `python` instead of `python3`.
+`(myvenv)` 總是會出現！
 
-OK, we have all important dependencies in place. We can finally install Django!
+當你在虛擬環境下工作時， `python` 會自動切換到目前所使用的版本，所以你就可以用 `python` 而不需要再輸入 `python3`。
 
-## Installing Django
+好了，我們已經有了所有相關的套件了，我們終於可以安裝 Django 了！
 
-Now that you have your `virtualenv` started, you can install Django using `pip`. In the console, run `pip install django==1.6.6` (note that we use a double equal sign: `==`).
+
+## 安裝 Django
+
+現在你應該已經啟動了你的 `virtualenv`，你可以用 `pip` 來安裝 Django。在終端機底下，執行 `pip install django==1.6.6` （注意噢，我們是使用雙等號： `==`）。
 
     (myvenv) ~$ pip install django==1.6.6
     Downloading/unpacking django==1.6.6
@@ -96,6 +98,6 @@ Now that you have your `virtualenv` started, you can install Django using `pip`.
     Successfully installed django
     Cleaning up...
 
-> If you get an error when calling pip on Ubuntu 12.04 please run `python -m pip install -U --force-reinstall pip` to fix the pip installation in the virtualenv.
+> 如果當你在 Ubuntu 12.04 下呼叫 `pip` 時出現錯誤訊息，請執行 `python -m pip install -U --force-reinstall pip` 去修復這個 pip 在 virtualenv 下的安裝問題。
 
-That's it! You're now (finally) ready to create a Django application! But to do that, you need a nice program to write your code in...
+這就是全部了！你現在（終於）準備好去創建一個 Django 應用程式！但在這之前，你需要一個好的軟體讓你可以好好寫程式...

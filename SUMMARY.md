@@ -6,7 +6,7 @@
 * [安裝 Python](python_installation/README.md)
 * [初試 Python](python_introduction/README.md)
 * [什麼是 Django?](django/README.md)
-* [Django installation](django_installation/README.md)
+* [安裝 Django](django_installation/README.md)
 * [Code editor](code_editor/README.md)
 * [Starting Django project](django_start_project/README.md)
 * [Django models](django_models/README.md)
