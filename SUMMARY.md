@@ -8,7 +8,7 @@
 * [什麼是 Django?](django/README.md)
 * [安裝 Django](django_installation/README.md)
 * [程式碼編輯器](code_editor/README.md)
-* [Starting Django project](django_start_project/README.md)
+* [開始一個 Django 專案](django_start_project/README.md)
 * [Django models](django_models/README.md)
 * [Django ORM (Querysets)](django_orm/README.md)
 * [Django admin](django_admin/README.md)

@@ -1,31 +1,31 @@
-# Your first Django project!
+# 你的第一個 Django 專案！
 
-> Part of this chapter is based on tutorials by Geek Girls Carrots (http://django.carrots.pl/).
+> 部分章節是來自怪咖女孩 Carrots (http://django.carrots.pl/)
 
-> Parts of this chapter is based on the [django-marcador
+> 部分章節是來自 [django-marcador
 tutorial](http://django-marcador.keimlink.de/) licensed under Creative Commons
 Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
 is copyrighted by Markus Zapke-Gründemann et al.
 
-We're going to create a simple blog!
+我們要開始來做一個簡單的 blog 了！
 
-The first step towards creating it is starting a new Django project. Basically, this means that we'll run some scripts provided by Django that will create the skeleton of a Django project for us: a bunch of directories and files that we will later use.
+要新增一個 Django 專案的第一步。基本上，這代表我們將會運行由 Django 提供的某些腳本，它會幫我們建立一個 Django 專案的基本架構：一堆我們待會會用上的檔案夾和檔案。
 
-The names of some files and directories are very important for Django. You should not rename the files that we are about to create. Moving them to a different place is also not a good idea. Django needs to maintain a certain structure in order to be able to find important things.
+這些檔案夾和檔案們的命名對 Django 來說是非常重要的。你不應該重新命名這些我們剛剛弄出來的檔案。將這些檔案移動到別的地方也不是好主意。為了可以容易找到重要的事物，Django 必須保持這些檔案結構。
 
-In console you should run (remember that you don't type `(myvenv) ~/djangogirls$`, OK?):
+在終端機下你應該執行（應該記得吧，你不需要再輸入 `(myvenv) ~/djangogirls$` 囉）：
 
-> Remember to run everything in the virtualenv. If you don't see a prefix `(myvenv)` in your console you need to activate your virtualenv. We explained how to do that in the __Django installation__ chapter in the __Working with virtualenv__ part.
+> 記得要在虛擬環境裡執行所有動作。如果你的終端機命令列沒有看到前綴 `(myvenv)` 時，你就需要重新喚起你的虛擬環境。我們已經在 _安裝 Django__ 這章的 __在虛擬環境下工作__ 中解釋過如何做囉。
 
-Run on Windows:
+在 Windows 下執行：
 
     (myvenv) ~/djangogirls$ python myvenv\Scripts\django-admin.py startproject mysite .
 
-or on Linux or Mac OS:
+或者在 Linux 或 Mac OS 下執行：
 
     (myvenv) ~/djangogirls$ django-admin.py startproject mysite .
 
-`django-admin.py` is a script that will create the directories and files for you. You should now have a directory structure which looks like this:
+`django-admin.py` 是一個可以替你創建資料夾與檔案的腳本(script)。你現在應該有像是下面這樣的資料目錄了：
 
     djangogirls
     ├───manage.py
@@ -35,31 +35,31 @@ or on Linux or Mac OS:
             wsgi.py
             __init__.py
 
+`manage.py` 是個協助管理這個網站的腳本。有了它我們將可以在我們的電腦上叫起一個 web server，不需安裝其他的東西。
 
-`manage.py` is a script that helps with management of the site. With it we will be able to start a web server on our computer without installing anything else, amongst other things.
+至於 `settings.py` 則包含了你的網站中的各種配置。
 
-The `settings.py` file contains the configuration of your website.
+記得當我們談過一個郵差如何檢查信要送到哪裡嗎？ `urls.py` 就是一個有很多範例的清單，被 `urlresolver` 所用。
 
-Remember when we talked about a postman checking where to deliver a letter? `urls.py` file contains a list of patterns used by `urlresolver`.
+現在讓我們先忽略其他檔案 - 我們不會改變那些。唯一需要記得的一件事就是不要不小心刪了它們 XD
 
-Let's ignore the other files for now - we won't change them. The only thing to remember is to not delete them by accident!
 
-## Changing settings
+## 改變設定
 
-Let's make some changes in `mysite/settings.py`. Open the file using the code editor you installed earlier.
+我們來在 `mysite/settings.py` 中做點改變。用你早先安裝的程式碼編輯器打開這個檔案。
 
-It would be nice to have the correct time on our website. Go to http://en.wikipedia.org/wiki/List_of_tz_database_time_zones and copy your relevant time zone (TZ). (eg. `Europe/Berlin` )
+如果我們網站中有正確的時間是件好事。到 http://en.wikipedia.org/wiki/List_of_tz_database_time_zones 這個維基頁面去複製你所在時區吧（TZ - time zone）。（例如這裡是 `Asia/Taipei` ）
 
-You should find lines that contain `USE_TZ` and `TIME_ZONE` and modify them to look like this, substituting `Europe/Berlin` with your relevant time zone:
+你應該可以找到幾行包含了 `USE_TZ` 與 `TIME_ZONE`，像這樣修改它，代入你的時區的資料來源 `Asia/Taipei` ：
 
     USE_TZ = False
-    TIME_ZONE = 'Europe/Berlin'
+    TIME_ZONE = 'Asia/Taipei'
 
-## Setup a database
+## 設定資料庫
 
-There's a lot of different database software that can store data for your site. We'll use the default one, `sqlite3`.
+這裡有好幾種不同的資料庫可以為你的網站儲存資料。我們將使用內定的那個， `sqlite3`。
 
-This is already set up in this part of your `mysite/settings.py` file:
+這已經在你的 `mysite/settings.py` 檔案中設定好了：
 
     DATABASES = {
         'default': {
@@ -68,7 +68,7 @@ This is already set up in this part of your `mysite/settings.py` file:
         }
     }
 
-To create a database for our blog, let's run the following in the console: `python manage.py syncdb` (we need to be the `djangogirls` directory that contains the `manage.py` file). If that goes well, you should see something like this:
+要為我們的部落格創建一個資料庫，我們要在終端機下執行這個： `python manage.py syncdb` (我們需要在已經建好了 `manage.py` 檔的 `djangogirls` 目錄下)。如果一切順利，你應該可以看到像這樣的東西：
 
     (myvenv) ~/djangogirls$ python manage.py syncdb
     Creating tables ...
@@ -93,22 +93,24 @@ To create a database for our blog, let's run the following in the console: `pyth
     Installing indexes ...
     Installed 0 object(s) from 0 fixture(s)
 
-It will ask you if you want to create a *superuser* - a user which has control over everything on the site. Type `yes`, press enter and type your username (lowercase, no spaces), email address and password when you're asked for them. Remember this username and password! We'll use it later.
+它會問你想不想創建一個 *超級使用者(superuser)* - 就是一個可以控制這個網站上所有功能的使用者。輸入 `yes` ，按下 Enter 並且輸入你的使用者名稱（小寫無空白），email 帳號以及密碼（必填）。記住這組帳密！我們稍後會用到。
 
-And we're done! Time to start the web server and see if our website is working!
+這樣我們就完成了！現在是時候叫起 web server 然後看看我們的網站怎麼樣！
 
-You need to be in the directory that contains the `manage.py` file (the `djangogirls` directory). In the console, we can start the web server by running `python manage.py runserver`:
+你一樣需要在這個包含了 `manage.py` 檔案的 `djangogirls` 目錄下。在終端機下，我們可以開始用 `python manage.py runserver` 來叫起我們的 web server 了：
 
     (myvenv) ~/djangogirls$ python manage.py runserver
 
-Now all you need to do is check that your website is running - open your browser (Firefox, Chrome, Safari, Internet Explorer or whatever you use) and enter the address:
+至此，你需要做的就是檢查你的網站是不是有運作起來 - 打開你的瀏覽器（火狐，Crhome, Safari 甚至是 IE 或是任何你有在用的）然後輸入這個網址：
 
     http://127.0.0.1:8000/
 
-You can stop the web server again (e.g. to type other commands on the command prompt) by pressing CTRL+C - Control and C buttons together.
+你可以再次停掉這個 web server 了（就是說在命令提示字元下輸入其他指令），藉由按下 CTRL+C - Control 和 C 鍵一起按下去。
 
-Congratulations! You've just created your first website and run it using a web server! Isn't that awesome?
+恭喜恭喜！你剛剛就建好了你的第一個網站，並且用 web server 運作起來了！好 Django 不棒嗎？
+
 
 ![It worked!](images/it_worked2.png)
 
+準備好進入下一階段了嗎？是時候加入一些內容了！
 Ready for the next step? It's time to create some content!
