@@ -1,29 +1,31 @@
-# What is Django?
+# 什麼是 Django?
 
-Django (_/ˈdʒæŋɡoʊ/ jang-goh_) is a free and open source web application framework, written in Python. It's a web framework - a set of components that helps you to develop websites faster and easier.
+Django (_/ˈdʒæŋɡoʊ/ jang-goh_) 是個用 Python 寫成的，免費而且開放原始碼的 Web 應用程式框架。他是個 Web 框架 - 就是一堆零件的組成，可以幫助你輕鬆快速的開發網站。
 
-You see, when you're building a website, you always need a similiar set of components: a way to handle user authentication (signing up, signing in, signing out), management panel for your website, forms, uploading files, etc.
+這麼說吧，當你蓋一個網站的時候，你總是需要一些很類似的零件：使用者登入（註冊、登入、登出），網站後台，表單，檔案上傳等等。
 
-Luckily for you other people long ago noticed that web developers face similar problems when building a new site, so they teamed up and created frameworks (Django is one of them) that give you ready components you can use.
+幸運的世界上有很多人很久以前就幫你注意到這件事，Web 開發者蓋一個新的網站的時候總是面對著一樣的問題，所以他們合作開發了框架使你可以直接擁有你會用到的零件（Django 就是其中之一）。
 
-Frameworks exist to save you from having to reinvent the wheel and help alleviate some of the overhead when you’re building a new site.
+各種框架的存在就是拯救你免於重造輪子，當你新建一個網站的時候可以減少重工。
 
-## Why do you need a framework?
 
-To understand what Django actually is for, we need a closer look at the servers. The first thing is that the server needs to know that you want it to serve you a webpage.
+## 為什麼你需要一個框架？
 
-Imagine a mailbox (port) which is monitored for incoming letters (requests). This is done by a web server. The web server reads the letter, and sends a response with a webpage. But when you want to send something, you need to have some content. And Django is something that helps you create the content.
+要真正了解 Django 事實上到底在做什麼，我們需要更了解伺服器。首先就是伺服器需要知道你想要如何來提供你的網頁。
 
-## What happens when someone requests a website from your server?
+想像一個信箱（埠 port）會偵測寄來的信（請求 request）。Web 伺服器就是在做這件事。Web 伺服器讀這些信，然後寄出相對的網頁作為回應。但是當你想要寄出某個東西，你需要一些內容，而 Django 就是再幫你產生相對應的內容。
 
-When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. This part is done by Django's __urlresolver__ (Note that a website address is called a URL - Uniform Resource Locator, so the name *urlresolver* makes sense). It is not very smart - it takes a list of patterns and tries to match the URL. Django checks patterns from top to the bottom and if something is matched then Django passes the request to the associated function (which is called *view*).
 
-Imagine a postman with a letter. She is walking down the street and checks each house number with the one on the letter. If it matches, they put the letter there. This is how the urlresolver works!
+## 當某個人向你的伺服器請求的時候發生了什麼？
 
-In the *view* function all interesting things are done: we can look at a database to look for some information. Maybe the user asked to change something in the data? Like a letter saying "Please change description of my job." - the *view* can check if you are allowed to do that, then update the job description for you and send back a message: "Done!". Then the *view* generates a response and Django can send it to the user's web browser.
+當伺服器收到某個請求，這個請求會通過 Django，Django 則負責判斷這個請求是什麼。Django 會先收到網址然後來判斷應該要給出什麼回應。這部分是由 Django 的 __urlresolver__ 來處理（網址其實就是所謂的 URL - Uniform Resource Locator，所以這就是為什麼這裡取名為 *urlresolver* ）。它不聰明 - 他有一堆範例去判斷這個 URL 符合哪一個範例。Django 則查看範本，如果 URL 符合某一個，Django 就送出這個請求相對應的函數們（在這裡稱為 *view* ）
 
-Of course, the description above is a little bit simplified, but you don't need to know all the technical things yet. Having a general idea is enough.
+想像一個帶著信的郵差。她在街上遊走，確認每家的地址把信送給他們，如果地址對了，她就把信放進去，這就是 urlresolver 在做的事情。
 
-So instead of diving too much into details, we will simply start creating something with Django and we will learn all the important parts along the way!
+在 *view* 函數中會做一些有趣的事情：我們會去資料庫中找某些資料。萬一使用者要求要更改某些資料呢？例如某封請求「拜託把我的工作敘述改一下吧」的信 - *view* 就會檢查你是不是允許他可以做這件事，然後你會在更新了他的工作敘述以後回傳給他一個「完成囉！」的訊息。之後 *view* 就會產生一個回應，Django 就會將回應送到使用者的瀏覽器上。
+
+當然了，以上的敘述已經簡化了很多，但你也不需要知道所有技術上的細節。有一個簡單的概念即可。
+
+所以不糾結在太多細節敘述上，我們打算就簡單的開始用 Django 做點事，就可以從中學習到更多了。
 
 

@@ -5,7 +5,7 @@
 * [命令行(command-line)簡介](intro_to_command_line/README.md)
 * [安裝 Python](python_installation/README.md)
 * [初試 Python](python_introduction/README.md)
-* [What is Django?](django/README.md)
+* [什麼是 Django?](django/README.md)
 * [Django installation](django_installation/README.md)
 * [Code editor](code_editor/README.md)
 * [Starting Django project](django_start_project/README.md)
