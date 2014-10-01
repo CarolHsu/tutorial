@@ -1,39 +1,39 @@
 # Django models
 
-What we want to create now is something that will store all posts in our blog. But to be able to do that we need to talk a little bit about things called `objects`.
+我們現在想要新建立的東西，將可以儲存我們部落格中的所有發文。為了這個目的我們需要講一點點小東西，這個東西被稱為 `物件(object)` 。
 
-## Objects
+## 物件 (Objects)
 
-There is a concept in programming called `Object-oriented programming`. The idea is that instead of writing everything as a boring sequence of programming instructions we can model things and define how they interact with each other.
+有一個被程序員們稱為 `物件導向程式設計 (Object-oriented programming)` 的概念。這個想法是說，無論是什麼東西，即便只是一個程式敘述無趣至極的序列，我們都可以把它模型化，並且定義它如何與其他東西互動。
 
-So what is an object? It is a number of properties and actions. It sounds weird, but we will give you an example.
+所以什麼是物件？就是一個把性質與行為量化的東西。這聽起來很詭異，我們用一個例子來解釋。
 
-If we want to model a cat we will create an object `Cat` that has some properties, i.e. `color`, `age`, `mood` (i.e. good, bad, sleepy ;)), `owner` (that is a `Person` object or maybe, in case of a strayed cat, this property is empty).
+如果我們要模擬一隻貓，我們就會建立一個叫做 `Cat` 的物件，並且這個 `Cat` 會有一些屬性。例如說， `毛色` 、 `貓齡` 、 `心情` (像是「好心情」、「壞心情」、「昏昏欲睡」等等)， `飼主` (這或許就是一個 `Person` 物件，如果是一隻走失的貓咪，這個屬性應該就是空的)。
 
-And then the `Cat` has some actions: `purr`, `scratch` or `feed` (in which we will give the cat some `CatFood`, which could be a separate object with properties, i.e. `taste`).
+然後這隻貓會有一些行為： `發出呼嚕聲` 、 `磨蹭` 或者 `被餵食` (這時我們會給貓咪一些 `貓食` ，當然這個貓食也應該要被獨立成另外一個擁有自己的屬性的物件，像是 `口味`)。
 
-    Cat
+    Cat（貓咪）
     --------
-    color
-    age
-    mood
-    owner
-    purr()
-    scratch()
-    feed(cat_food)
+    color （毛色）
+    age （貓齡）
+    mood （心情）
+    owner （飼主）
+    purr() （發出呼嚕聲()）
+    scratch() （磨蹭()）
+    feed(cat_food) （被餵食(貓食)）
 
 
-    CatFood
+    CatFood （貓食）
     --------
-    taste
+    taste （口味）
 
-So basically the idea is to describe real things in code with properties (called `object properties`) and actions (called `methods`).
+所以說基本上這個想法可以在程式碼中描述真實的物品，藉由一些屬性（稱為 `物件屬性 object properties`） 與行為（稱為 `方法 methods` ）。
 
-How will we model blog posts then? We want to build a blog, right?
+那我們如何去把部落格中的文章模型化？我們想要建立一個部落格對吧？
 
-We need to answer the question: what is a blog post? What properties should it have?
+我們需要先思索一個問題：什麼是網誌？它擁有哪些屬性？
 
-Well, for sure our blog post needs some text with its content and a title, right? It would be also nice to know who wrote it - so we need an author. Finally, we want to know when the post was created and published.
+嗯，可以確定的是我們的網誌一定會有一些文字，像是內容與標題，對吧？能知道這篇網誌是誰寫的也是一個好主意 - 所以我們還需要作者。最後，我們想要知道何時新增與發表了這篇網誌。
 
     Post
     --------
@@ -43,27 +43,28 @@ Well, for sure our blog post needs some text with its content and a title, right
     created_date
     published_date
 
-What kind of things could be done with a blog post? It would be nice to have some `method` that publishes the post, right?
+那網誌又可以做什麼樣的事情呢？如果可以有一些 `method` 來發佈網誌就太好了對吧！
 
-So we will need `publish` method.
+所以我們也需要 `publish (發佈)` 方法。
 
-Since we already know what we want to achieve, we can start modeling it in Django!
+既然我們已經知道有哪些需要做的事情，我們就可以開始用 Django 模擬它了！
+
 
 ## Django model
 
-Knowing what an object is, we can create a Django model for our blog post.
+了解了何謂物件，我們就來做一個我們的網誌的 Django model 吧。
 
-A model in Django is a special kind of object - it is saved in the `database`. A database is a collection of data. This is a place in which you will store information about users, your blog posts, etc. We will be using a SQLite database to store our data. This is the default Django database adapter -- it'll be enough for us right now.
+Model 在 Django 中是一種特別類型的物件 - 它被儲存在 `資料庫 database` 中。一個資料庫就是一堆資料的集合。這裡你可以儲存使用者的資訊、你的網誌等等。我們將使用 SQLite 資料庫來儲存我們的資料。這是 Django 內建的資料庫連接器 -- 這夠我們用了。
 
-You can think of a model in the database as of a spreadsheet with columns (fields) and rows (data).
+你可以將一個 model 想像成在資料庫裡面的一個有行(rows - 一筆資料)與列(columns - 欄位)的電子表格。
 
-### Creating an application
+### 創建一個應用程序
 
-To keep everything tidy, we will create a separate application inside our project. It is very nice to have everything organized from the very beginning. To create an application we need to run the following command in the console (from `djangogirls` directory where `manage.py` file is):
+為了保持一切整潔乾淨，我們會將一個獨立的應用程序創建在我們的專案中。如果可以從一開始就讓一切井然有序最好了。我們可以在終端機中執行以下指令來新建一個應用程式（在有 `manage.py` 檔的 `djangogirls` 資料夾下）：
 
     (myvenv) ~/djangogirls$ python manage.py startapp blog
 
-You will notice that a new `blog` directory is created and it contains a number of files now. Our directories and files in our project should look like this:
+你會發現多了一個新建的 `blog` 資料夾，裡面有一些檔案。我們在這個專案下的的整個資料目錄就變成這樣子了：
 
     djangogirls
     ├── mysite
@@ -79,7 +80,7 @@ You will notice that a new `blog` directory is created and it contains a number 
             tests.py
             views.py
 
-After creating an application we also need to tell Django that it should use it. We do that in the file `mysite/settings.py`. We need to find `INSTALLED_APPS` and add a line containing `'blog',` just above `)`. So the final product should look like this:
+在創建了一個應用程序後我們也需要告訴 Django 說這個應用程序要用上它。我們在 `mysite/settings.py` 這個檔案中設定。我們需要找到 `INSTALLED_APPS` 然後在 `(` 內加上一行 `'blog',` 。所以最終產物就會長得像這樣。
 
     INSTALLED_APPS = (
         'django.contrib.admin',
@@ -91,11 +92,12 @@ After creating an application we also need to tell Django that it should use it.
         'blog',
     )
 
-### Creating a blog post model
 
-In the `blog/models.py` file we define all objects called `Models` - this is a place in which we will define our blog post.
+### 建立一個網誌 model
 
-Let's open `blog/models.py`, remove everything from it and write code like this:
+我們定義所有叫做 `Model` 的物件在 `blog/models.py` 檔中 - 這禮我們可以定義我們的網誌。
+
+讓我們打開 `blog/models.py` ，移除裡面所有的東西，並寫下這樣的程式碼：
 
     from django.db import models
     from django.utils import timezone
@@ -117,34 +119,35 @@ Let's open `blog/models.py`, remove everything from it and write code like this:
         def __str__(self):
             return self.title
 
-It is scary, right? But no worries, we will explain what these lines mean!
+看起來豪可怕啊對嗎？但別擔心，我們會一行一行的解釋給你聽！
 
-All lines starting with `from` or `import` are lines that add some bits from other files. So instead of copying and pasting the same things in every file, we can include some parts with `from ... import ...`.
+所有行首是 `from` 或 `import` 的程式碼就是引進其他檔案的程式。所以除了複製貼上一堆一樣的程式碼以外，我們也可以用 `from... import...` 來把檔案內容載入進來。
 
-`class Post(models.Model):` - this line defines our model (it is an `object`).
 
-- `class` is a special keyword that indicates that we are defining an object.
-- `Post` is the name of our model, we can give it a different name (but we must avoid special characters and whitespaces). Always start a name with an uppercase letter.
-- `models.Model` means that the Post is a Django Model, so Django knows that it should be saved in the database.
+`class Post(models.Model):` - 這行定義了我們的 model (它就是一個 `object` )
+- `class` 是由我們定義的一個物件，是一個保留字。
+- `Post` 是這個 model 的名稱，我們可以給各種不同的名字（但必須避免特殊自元與空白）。這裡的字首永遠大寫。
+- `models.Model` 這意指 Post 是一個 Django Model, 這樣 Django 就會知道要這個東西要存進資料庫。
 
-Now we define properties we were talking about: `title`, `text`, `created_date`, `published_date` and `author`. To do that we need to define a type of field (is it text? A number? A date? A relation to another object, i.e. a User?).
+現在我們定義我們剛才提到的各種性質： `title` 、 `text` 、 `created_date` 、 `published_date` 與 `author` 。為了做這件事我們必須要定義資料形態（它是文字嗎？還是數字？是個日期嗎？是個關聯性物件嗎，像是 User 這類的？）
 
-- `models.CharField` - this is how you define text with a limited number of characters.
-- `models.TextField` - this is for long texts without a limit. It will be ideal for a blog post content, right?
-- `models.DateTimeField` - this is a date and time.
-- `models.ForeignKey` - this is a link to another model.
+- `models.CharField` - 這裏你可以定義這個資料是一個有上限的字元。
+- `models.TextField` - 這裏你可以定義這個資料是一個有無上限的字串。這適合被部落格網誌的內容所用，對吧？
+- `models.DateTimeField` - 這是是日期與時間。
+- `models.ForeignKey` - 這是與其他 model 的關聯。
 
-We will not explain every bit of code here, since it would take too much time. You should take a look at Django's documentation, if you want to know more about Model fields and how to define things other than those described above (https://docs.djangoproject.com/en/1.6/ref/models/fields/#field-types).
+我們不解釋所有的程式碼，因為會花上太多時間。你應該看一下 Django 的文件 (https://docs.djangoproject.com/en/1.6/ref/models/fields/#field-types)，如果你想知道更多關於 Model fields 的事情，或是如何定義其他在此處提到的東西。
 
-What about `def publish(self):`? It is exactly our `publish` method we were talking about before. `def` means that this is a function/method. `publish` is a name of the method. You can change it, if you want. The rule is that we use lowercase and underscores instead of whitespaces (i.e. if you want to have a method that calculates average price you could call it `calculate_average_price`).
 
-Methods very often `return` something. There is an example of that in the `__str__` method. In this scenario, when we call `__str__()` we will get a text (**string**) with a Post title.
+那 `def publish(self):` 又是啥？它事實上就是我們之前所提到的 `publish` 方法。 `def` 表示這是一個 函數/方法 `publish` 就是這個方法的名稱。如果你喜歡，你可以改變它。在此處我們用小寫與底線（取代空白）來作為它的命名規則（就是說如果你想要有一個可以計算平均價錢的方法你可以將名稱取為 `calculate_average_price` ）。
 
-If something is still not clear about models, feel free to ask your coach! We know it is very complicated, especially when you learn what objects and functions are at the same time. But hopefully it looks slightly less magic for you now!
+方法通常會 `return(回傳)` 一些東西。這裡有個在 `__str__` 方法中的範例。在這個情境下，當我們呼叫 `__str__()` 我們將得到關於網誌標題的一組文字 (**string**)。
 
-### Create tables for models in your database
+如果對於 model 還有什麼不清楚的，馬上問你的教練！我們知道這滿複雜的，特別是你同時學了物件與函數。但希望這個東西現在開始可以讓你擁有神奇魔法！
 
-The last step here is to add our new model to our database. It is as easy as typing `python manage.py syncdb`. It will look like this:
+### 在資料庫中創建與 model 相關的 table
+
+最後一步是把我們的新 model 加進我們的資料庫 (database)。這很輕鬆，就輸入 `python manage.py syncdb` 即可，看起來會像這樣：
 
     (myvenv) ~/djangogirls$ python manage.py syncdb
     Creating tables ...
@@ -153,4 +156,4 @@ The last step here is to add our new model to our database. It is as easy as typ
     Installing indexes ...
     Installed 0 object(s) from 0 fixture(s)
 
-It would be nice to see this Post model, right? Jump to the next chapter to see what your Post looks like!
+看到這個 Post model 的感覺真好啊對吧？進入下一個章節看看你的網誌長怎樣吧！

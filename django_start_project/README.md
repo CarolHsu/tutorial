@@ -107,10 +107,9 @@ is copyrighted by Markus Zapke-Gründemann et al.
 
 你可以再次停掉這個 web server 了（就是說在命令提示字元下輸入其他指令），藉由按下 CTRL+C - Control 和 C 鍵一起按下去。
 
-恭喜恭喜！你剛剛就建好了你的第一個網站，並且用 web server 運作起來了！好 Django 不棒嗎？
+恭喜恭喜！你剛剛就建好了你的第一個網站，並且用 web server 運作起來了！好 Django 不學嗎？
 
 
 ![It worked!](images/it_worked2.png)
 
 準備好進入下一階段了嗎？是時候加入一些內容了！
-Ready for the next step? It's time to create some content!
