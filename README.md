@@ -31,6 +31,6 @@ http://creativecommons.org/licenses/by-sa/4.0/
 
 ## About and contributing
 
-這是 [Django Girls](http://djangogirls.org/) [官方教材](http://tutorial.djangogirls.org/)的中譯版。如果你發現任何錯誤並且想要更新它歡迎 Fork [這個專案](http://github.com/carolhsu/tutorial)，本書全冊可於 GitBook [Django Girls' Tutorial 中文版教材](http://carolhsu.gitbooks.io/django-girls-tutorial-traditional-chiness/) 上閱讀。
+這是 [Django Girls](http://djangogirls.org/) [官方教材](http://tutorial.djangogirls.org/)中譯版。如果你發現任何錯誤並且想要更新它歡迎 Fork [這個專案](http://github.com/carolhsu/tutorial)，本書全冊可於 GitBook [Django Girls' Tutorial 中文版教材](http://carolhsu.gitbooks.io/django-girls-tutorial-traditional-chiness/) 上閱讀。
 
-[Django Girls Taipei](http://djangogirls.org/taipei) 有提供另外一份[活動當天使用的教材](http://djangogirlstaipei.herokuapp.com/tutorials/)，需要的人也可以參考 :)
+[Django Girls Taipei](http://djangogirls.org/taipei) 有編寫一份[Django Girls 學習指南](http://djangogirlstaipei.gitbooks.io/django-girls-taipei-tutorial/) 於 Django Girls Taipei 使用，需要的人也可以參考 :)
