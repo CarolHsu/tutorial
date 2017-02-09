@@ -41,7 +41,7 @@ is copyrighted by Markus Zapke-Gründemann et al.
 
     ~/djangogirls$ python3 -m venv myvenv
 
-`myvenv` 則你的 `virtualenv` 名稱。你可以取自己喜歡的名稱，不過必須要是小寫並且沒有其他空白。保持名稱簡短是好主意 - 因為你將會常常提起它！
+`myvenv` 則是你的 `virtualenv` 名稱。你可以取自己喜歡的名稱，不過必須要是小寫並且沒有其他空白。保持名稱簡短是好主意 - 因為你將會常常提起它！
 
 > __小提示:__ 在 Ubuntu 14.04 下初始化虛擬環境目前會給你以下的錯誤訊息：
 
