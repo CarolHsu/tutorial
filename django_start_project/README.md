@@ -64,13 +64,13 @@ is copyrighted by Markus Zapke-Gründemann et al.
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
-要為我們的部落格創建一個資料庫，我們要在終端機下執行這個： `python manage.py syncdb` (我們需要在已經建好了 `manage.py` 檔的 `djangogirls` 目錄下)。如果一切順利，你應該可以看到像這樣的東西：
+要為我們的部落格創建一個資料庫，我們要在終端機下執行這個： `python manage.py migrate` (我們需要在已經建好了 `manage.py` 檔的 `djangogirls` 目錄下)。如果一切順利，你應該可以看到像這樣的東西：
 
-    (myvenv) ~/djangogirls$ python manage.py syncdb
+    (myvenv) ~/djangogirls$ python manage.py migrate
     Creating tables ...
     Creating table django_admin_log
     Creating table auth_permission
